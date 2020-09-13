@@ -2,8 +2,8 @@
 
 <h2>1. Wypisz tablicę 'frameworsk' za pomocą *ngFor i dodaj index:</h2>
 <ul>
-  <li>
-    uzupełnij
+  <li *ngFor="let item of frameworks, let i = index">
+    {{ i }}. {{ item }}
   </li>
 </ul>
 
@@ -11,7 +11,7 @@
 
 <h2>2. Wypisz model i markę samochodu z tablicy 'cars' za pomocą *ngFor:</h2>
 <ul>
-  <li>uzupełnij</li>
+  <li *ngFor="let item of cars">{{ item.mark }} {{ item.model }}</li>
 </ul>
 
 <br />
@@ -21,8 +21,7 @@
   keyvalue:
 </h2>
 <ul>
-  <li>
-    uzupełnij
+  <li *ngFor="let item of carsObj | keyvalue">{{ item.key }} {{ item.value }}
   </li>
 </ul>
 
@@ -33,9 +32,9 @@
   należy użyć *ngIf:
 </h2>
 <ul>
-  <ng-container>
-    <li>uzupełnij</li>
-    <li>uzupełnij</li>
+  <ng-container *ngFor="let item of frameworks; let first = first; let last = last">
+    <li *ngIf='first'>{{ item }}</li>
+    <li *ngIf='last'>{{ item }}</li>
   </ng-container>
 </ul>
 
@@ -44,8 +43,8 @@
   Dodatkowo należy użyć *ngIf (jeżeli już wiesz jak używać):
 </h2>
 <ul>
-  <ng-container>
-    <li>uzupełnij</li>
+  <ng-container *ngFor="let item of frameworks; let even = even">
+    <li *ngIf='even'>{{ item }}</li>
   </ng-container>
 </ul>
 
@@ -54,7 +53,7 @@
   company name:
 </h2>
 <ul>
-  <li>
-    uzupełnij
+  <li *ngFor="let item of persons | keyvalue">
+    {{ item.value.id }}. {{ item.value.name }} |  {{ item.value.address.city }}
   </li>
 </ul>
